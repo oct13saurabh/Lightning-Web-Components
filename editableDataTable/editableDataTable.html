@@ -1,0 +1,20 @@
+<template>
+    <div class="rightAlign">
+        <lightning-button label="" icon-name="utility:refresh" onclick={refresh}></lightning-button>
+    </div>
+    <div class="slds-p-around_medium lgc-bg" style="height: 300px;">
+        <lightning-datatable
+            key-field="Id"
+            data={accounts}
+            show-row-number-column
+            row-number-offset={rowOffset}
+            columns={columns}
+            is-loading={tableLoadingState}
+            draft-values={draftValues}
+            onsave={handleSave}>
+        </lightning-datatable> <br>
+        <div style="text-align:center;">
+            <c-pagination-navigation onprevious={handlePrev} onnext={handleNext}></c-pagination-navigation> 
+        </div>
+    </div>
+</template>
